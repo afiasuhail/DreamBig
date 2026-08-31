@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DreamBig Foundation</title>
+<style>
+  :root{
+    --green:#3f7d4f;
+    --green-dark:#2c5a3a;
+    --green-tint:#eef6ee;
+    --text:#222222;
+    --muted:#6b6b6b;
+    --border:#dfe7e1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    color:var(--text);background:#ffffff;line-height:1.7;font-size:16px;
+  }
+  a{color:var(--green);text-decoration:none;border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--green);}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+  section{padding:44px 0;}
+  .tint{background:var(--green-tint);}
+  h1{font-size:30px;font-weight:normal;margin-bottom:14px;}
+  h2{font-size:22px;font-weight:normal;margin-bottom:18px;color:var(--green-dark);}
+  .lede{color:var(--muted);font-size:15px;margin-bottom:22px;}
+
+  /* header / nav */
+  header{border-bottom:2px solid var(--green);padding:22px 0;}
+  .brand{display:flex;align-items:baseline;gap:10px;}
+  .mark{
+    width:30px;height:30px;background:var(--green);color:#fff;font-weight:bold;
+    display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;
+  }
+  .brand-name{font-size:22px;}
+  .tagline{font-size:12px;color:var(--muted);margin:6px 0 0 40px;}
+  nav{margin-top:16px;font-size:14px;}
+  nav a{margin-right:20px;color:var(--muted);border-bottom:none;padding-bottom:3px;}
+  nav a.active{color:var(--text);border-bottom:1px solid var(--green);}
+  nav a:hover{color:var(--green);}
+
+  /* photo gallery strip */
+  .gallery{
+    display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:12px 0;margin-bottom:6px;
+  }
+  .gallery img{height:228px;width:auto;border:1px solid var(--border);scroll-snap-align:start;flex-shrink:0;}
+  .scroll-hint{font-size:11px;color:var(--muted);text-align:right;margin-bottom:26px;}
+
+  /* founder intro */
+  .founder-intro{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;margin-bottom:26px;}
+  .founder-photo{flex:0 0 190px;}
+  .founder-photo img{width:100%;border:1px solid var(--border);display:block;}
+  .founder-photo p{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;}
+  .founder-text{flex:1;min-width:280px;font-size:15px;color:var(--text);}
+
+  .cta-row{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;background:var(--green);color:#fff;padding:10px 22px;
+    font-size:14px;border:1px solid var(--green-dark);
+  }
+  .btn:hover{background:var(--green-dark);border-bottom:1px solid var(--green-dark);}
+
+  .stat-num{font-size:21px;color:var(--green-dark);font-weight:bold;}
+  .stat-label{font-size:11px;color:var(--muted);}
+
+  /* impact numbers */
+  .stat-strip{display:flex;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:30px;}
+  .stat-strip div{flex:1;padding:16px 0;text-align:center;border-right:1px solid var(--border);}
+  .stat-strip div:last-child{border-right:none;}
+  .stat-strip .stat-num{font-size:22px;}
+
+
+  /* journey timeline - horizontal */
+  .timeline{
+    display:flex;align-items:stretch;overflow-x:auto;border-top:2px solid var(--green);
+    padding-top:24px;scroll-snap-type:x mandatory;margin-bottom:6px;
+  }
+  .year-block{
+    position:relative;flex:0 0 210px;padding-right:20px;margin-right:20px;
+    border-right:1px solid var(--border);scroll-snap-align:start;
+  }
+  .year-block:last-child{border-right:none;margin-right:0;padding-right:0;}
+  .year-block::before{
+    content:'';position:absolute;top:-31px;left:0;width:10px;height:10px;
+    border-radius:50%;background:var(--green);
+  }
+  .year-label{font-size:22px;color:var(--green-dark);margin-bottom:10px;}
+
+  .year-list{list-style:none;}
+  .year-list li{font-size:13px;line-height:1.5;padding-left:14px;position:relative;margin-bottom:7px;}
+  .year-list li::before{content:'\2713';position:absolute;left:0;color:var(--green);font-size:12px;font-weight:bold;}
+  .year-list li:last-child{margin-bottom:0;}
+
+  .year-stats{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 4px;}
+  .year-stat{
+    border:1px solid var(--border);background:var(--green-tint);color:var(--green-dark);
+    font-size:10.5px;padding:4px 7px;border-radius:3px;
+  }
+
+  .closing{
+    margin-top:10px;font-size:15px;font-style:italic;color:var(--green-dark);
+    border-top:1px solid var(--border);padding-top:24px;
+  }
+
+  /* success stories */
+  .story-scroll{
+    display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:18px 0;margin-bottom:6px;
+  }
+  .story-item{flex:0 0 190px;scroll-snap-align:start;}
+  .story-item img{width:100%;height:230px;object-fit:cover;border:1px solid var(--border);display:block;}
+  .story-year{font-size:11px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.04em;margin:10px 0 4px;}
+  .story-item p{font-size:13px;color:var(--muted);}
+
+  /* faq */
+  details{border-bottom:1px solid var(--border);padding:14px 0;}
+  details:first-of-type{border-top:1px solid var(--border);}
+  summary{cursor:pointer;font-size:15px;}
+  details p{margin-top:10px;font-size:14px;color:var(--muted);}
+
+  /* donate */
+  .amt-group{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+  .amt-group input{position:absolute;opacity:0;pointer-events:none;}
+  .amt-group label{
+    border:1px solid var(--green);color:var(--green-dark);padding:8px 18px;
+    font-size:14px;cursor:pointer;display:inline-block;
+  }
+  .amt-group input:checked + label{background:var(--green);color:#fff;}
+
+  footer{background:var(--green-tint);border-top:1px solid var(--border);padding:26px 0;}
+  .foot-row{display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:8px;}
+  .foot-row + .foot-row{margin-top:10px;font-size:11px;color:var(--muted);}
+  footer a{color:var(--green-dark);}
+
+  @media(max-width:700px){
+    .stat-strip{flex-wrap:wrap;}
+    .stat-strip div{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--border);}
+    nav a{display:inline-block;margin-bottom:6px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark">D</div>
+      <div class="brand-name">DreamBig Foundation</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h1>Change lives, one classroom at a time.</h1>
+
+    <div class="founder-intro">
+      <div class="founder-photo">
+        <img src="images/afia-founder.jpg" alt="Afia Suhail, founder of DreamBig Education">
+        <p>Afia Suhail, Founder</p>
+      </div>
+      <div class="founder-text">
+        <p>Hello, I&rsquo;m Afia Suhail, a student from Bhopal, India. I started DreamBig Education because I know that a good education can change everything for a person, yet I saw too many brilliant students without opportunities. That's why I&rsquo;m working towards breaking financial barriers and making guidance to professional education more accessible. My dream is to spread educational opportunities throughout India, starting with my hometown.</p>
+      </div>
+    </div>
+
+    <h2>DreamBig at work</h2>
+    <div class="gallery">
+      <img src="images/dreambig-banner-1.jpg" alt="DreamBig volunteer leading a robotics and coding session for students">
+      <img src="images/dreambig-banner-lifeline.jpg" alt="Afia with a group of students outside the Lifeline Foundation center, faces blurred for privacy">
+      <img src="images/dreambig-banner-2.jpg" alt="DreamBig volunteer demonstrating a coding robot to a classroom">
+      <img src="images/dreambig-banner-3.jpg" alt="Students learning 3D printing concepts in a DreamBig digital learning session">
+      <img src="images/dreambig-banner-4.jpg" alt="DreamBig volunteer explaining Arduino electronics to students">
+      <img src="images/dreambig-banner-5.jpg" alt="DreamBig volunteer teaching a coding lesson to students on a projector screen">
+      <img src="images/dreambig-banner-6.jpg" alt="DreamBig volunteer presenting a coding project to students">
+    </div>
+    <div class="scroll-hint">scroll for more &rarr;</div>
+
+    <div class="cta-row">
+      <a href="#impact">See our impact &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="impact" class="tint">
+  <div class="wrap">
+    <h2>Numbers that matter</h2>
+    <p class="lede">Every number represents a student whose path changed because someone chose to invest in them.</p>
+    <div class="stat-strip">
+      <div><div class="stat-num">39</div><div class="stat-label">graduated</div></div>
+      <div><div class="stat-num">$18K+</div><div class="stat-label">raised</div></div>
+      <div><div class="stat-num">12+</div><div class="stat-label">volunteers</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <h2>Our journey, one year at a time.</h2>
+    <p class="lede">What started as a small, informal effort in 2022 has grown into a foundation with real, measurable impact. Names of students are shortened to protect privacy.</p>
+
+    <div class="timeline">
+
+      <div class="year-block">
+        <div class="year-label">2022</div>
+        <ul class="year-list">
+          <li>Informal workshops &amp; mentorship for women's education in Bhopal.</li>
+          <li>Gave away old books and an iPad.</li>
+          <li>Realised: students needed funds, not just goodwill.</li>
+        </ul>
+      </div>
+
+      <div class="year-block">
+        <div class="year-label">2023</div>
+        <ul class="year-list">
+          <li>Began collecting funds from family &amp; friends for scholarships.</li>
+          <li>A neighbor's spare room became our first library.</li>
+          <li>Supported 9 students &mdash; Medical, Law, Engineering.</li>
+        </ul>
+        <div class="year-stats">
+          <span class="year-stat">$1,890 collected</span>
+          <span class="year-stat">1 laptop + projector given</span>
+          <span class="year-stat">9 students supported monetarily</span>
+        </div>
+      </div>
+
+      <div class="year-block">
+        <div class="year-label">2024</div>
+        <ul class="year-list">
+          <li>Opened the DreamBig Education center in Bhopal.</li>
+          <li>Ran Arduino &amp; HTML workshops.</li>
+          <li>Supported 16 students with tuition &amp; hostel fees.</li>
+        </ul>
+        <div class="year-stats">
+          <span class="year-stat">$3,537 collected</span>
+          <span class="year-stat">2 laptops given</span>
+          <span class="year-stat">16 students supported monetarily</span>
+        </div>
+      </div>
+
+      <div class="year-block">
+        <div class="year-label">2025</div>
+        <ul class="year-list">
+          <li>Expanded to villages near Bhopal.</li>
+          <li>Added volunteers to grow our reach.</li>
+          <li>Afia launched CodeByte, our coding app for students.</li>
+          <li>Supported 14 students with tuition fees.</li>
+        </ul>
+        <div class="year-stats">
+          <span class="year-stat">$2,915 collected</span>
+          <span class="year-stat">4 laptops given</span>
+          <span class="year-stat">14 students supported monetarily</span>
+        </div>
+      </div>
+
+      <div class="year-block">
+        <div class="year-label">2026</div>
+        <ul class="year-list">
+          <li>Held 3 events on women's empowerment &amp; education.</li>
+          <li>Supported more students (count pending).</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="scroll-hint">scroll for more &rarr;</div>
+  </div>
+</section>
+
+<section id="success-stories" class="tint">
+  <div class="wrap">
+    <h2>Success stories</h2>
+    <p class="lede">A few of the students DreamBig has supported along the way. Names are shortened and faces blurred to protect privacy.</p>
+
+    <div class="story-scroll">
+      <div class="story-item">
+        <img src="images/timeline-2024-mk.jpg" alt="Student in a white coat at a medical college white coat ceremony, face blurred for privacy">
+        <div class="story-year">2024</div>
+        <p>MK &mdash; now in her 2nd year of medical school.</p>
+      </div>
+      <div class="story-item">
+        <img src="images/timeline-2024-sf.jpg" alt="CLAT law entrance exam score card, personal details redacted for privacy">
+        <div class="story-year">2024</div>
+        <p>SF &mdash; cleared the CLAT competitive exam for admission to a National Law University.</p>
+      </div>
+      <div class="story-item">
+        <img src="images/timeline-2025-ha.jpg" alt="Convocation ceremony at Tata Institute of Social Sciences, faces blurred for privacy">
+        <div class="story-year">2025</div>
+        <p>HA &mdash; graduated from TISS with a Master's in International Electoral Management Practices.</p>
+      </div>
+      <div class="story-item">
+        <img src="images/timeline-2025-kk.jpg" alt="Student standing outside Azim Premji University, face blurred for privacy">
+        <div class="story-year">2025</div>
+        <p>KK &mdash; completed a Master's in Education, now teaching at a school.</p>
+      </div>
+      <div class="story-item">
+        <img src="images/timeline-2025-ak.jpg" alt="Student outside a university gate, faces blurred for privacy">
+        <div class="story-year">2025</div>
+        <p>AK &mdash; 3rd year student in an Ophthalmology Master's program.</p>
+      </div>
+      <div class="story-item">
+        <img src="images/timeline-2026-aa.jpg" alt="Medical students at an oath ceremony, faces blurred for privacy">
+        <div class="story-year">2026</div>
+        <p>AA &mdash; 2nd year medical student, pictured at her oath ceremony.</p>
+      </div>
+    </div>
+    <div class="scroll-hint">scroll for more &rarr;</div>
+
+    <p class="closing" style="border-top:none;padding-top:0;">Humble beginnings, much work still to be done&hellip;</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>DreamBig Foundation &middot; Bhopal, India</span>
+      <span><a href="impact.html">Stories</a></span>
+    </div>
+    <div class="foot-row">
+      <span>Made by Afia 2024</span>
+      <span>Last updated July 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
