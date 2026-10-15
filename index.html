@@ -3,7 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DreamBig Education</title>
+<title>DreamBig Education - Making Education Accessible in India</title>
+
+<!-- SEO: Core -->
+<meta name="description" content="DreamBig Education Foundation supports underprivileged students in Bhopal, India with scholarships, mentorship, and digital skills training. Founded by Afia Suhail in 2022.">
+<meta name="keywords" content="DreamBig Education, student scholarships India, education NGO Bhopal, women empowerment education India, scholarship, women STEM Digital skills, Afia Suhail DreamBig Education">
+<meta name="author" content="Afia Suhail">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dreambig.afia.suhailbasit.com/">
+
+<!-- SEO: Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DreamBig Education">
+<meta property="og:title" content="DreamBig Education - Making Education Accessible in India">
+<meta property="og:description" content="DreamBig Education Foundation supports underprivileged students in Bhopal, India with scholarships, mentorship, and digital skills training. Founded by Afia Suhail in 2022.">
+<meta property="og:url" content="https://dreambig.afia.suhailbasit.com/">
+<meta property="og:image" content="https://dreambig.afia.suhailbasit.com/images/dreambig-banner-1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+
+<!-- SEO: Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DreamBig Education - Making Education Accessible in India">
+<meta name="twitter:description" content="DreamBig Education Foundation supports underprivileged students in Bhopal with scholarships, mentorship, and digital skills training.">
+<meta name="twitter:image" content="https://dreambig.afia.suhailbasit.com/images/dreambig-banner-1.jpg">
+
+<!-- SEO: Browser theme colour -->
+<meta name="theme-color" content="#3f7d4f">
+
+<!-- SEO: Structured Data - Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "DreamBig Education",
+  "alternateName": "DreamBig Education",
+  "url": "https://dreambig.afia.suhailbasit.com/",
+  "logo": "https://dreambig.afia.suhailbasit.com/images/dreambig-banner-1.jpg",
+  "description": "DreamBig Education Foundation supports underprivileged students in Bhopal, India with scholarships, mentorship, and digital skills training.",
+  "foundingDate": "2022",
+  "founder": {
+    "@type": "Person",
+    "name": "Afia Suhail"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhopal",
+    "addressRegion": "Madhya Pradesh",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "knowsAbout": ["Education", "Scholarships", "Women Empowerment", "Digital Skills", "Coding"]
+}
+</script>
+
 <style>
   :root{
     --green:#3f7d4f;
@@ -34,7 +91,7 @@
     width:30px;height:30px;background:var(--green);color:#fff;font-weight:bold;
     display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;
   }
-  .brand-name{font-size:22px;}
+  .brand-name{font-size:30px;}
   .tagline{font-size:12px;color:var(--muted);margin:6px 0 0 40px;}
   nav{margin-top:16px;font-size:14px;}
   nav a{margin-right:20px;color:var(--muted);border-bottom:none;padding-bottom:3px;}
@@ -117,6 +174,18 @@
   .story-year{font-size:11px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.04em;margin:10px 0 4px;}
   .story-item p{font-size:13px;color:var(--muted);}
 
+  /* in the news */
+  .news-scroll{
+    display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:18px 0;margin-bottom:6px;
+  }
+  .news-item{flex:0 0 520px;max-width:88vw;scroll-snap-align:start;}
+  .news-item a.clip{display:block;border-bottom:none;}
+  .news-item img{width:100%;height:340px;object-fit:cover;object-position:top left;border:1px solid var(--border);display:block;background:#fff;}
+  .news-paper{font-size:15px;color:var(--green-dark);margin:10px 0 2px;}
+  .news-meta{font-size:12px;color:var(--muted);}
+
   /* faq */
   details{border-bottom:1px solid var(--border);padding:14px 0;}
   details:first-of-type{border-top:1px solid var(--border);}
@@ -149,7 +218,7 @@
 <header>
   <div class="wrap">
     <div class="brand">
-      <div class="mark">D</div>
+      <img src="images/DreamBig_logo_noBG.png" alt="DreamBig Education logo" style="height:40px;width:auto;display:block;">
       <div class="brand-name">DreamBig Education</div>
     </div>
   </div>
@@ -157,7 +226,7 @@
 
 <section>
   <div class="wrap">
-    <h1>Change lives, one classroom at a time.</h1>
+    <h1 style="font-size:18px;">Change lives, one classroom at a time.</h1>
 
     <div class="founder-intro">
       <div class="founder-photo">
@@ -172,7 +241,7 @@
     <h2>DreamBig at work</h2>
     <div class="gallery">
       <img src="images/dreambig-banner-1.jpg" alt="DreamBig volunteer leading a robotics and coding session for students">
-      <img src="images/dreambig-banner-lifeline.jpg" alt="Afia with a group of students outside a learning center, faces blurred for privacy">
+      <img src="images/dreambig-banner-lifeline.jpg" alt="Afia with a group of students outside the Lifeline Foundation center, faces blurred for privacy">
       <img src="images/dreambig-banner-2.jpg" alt="DreamBig volunteer demonstrating a coding robot to a classroom">
       <img src="images/dreambig-banner-3.jpg" alt="Students learning 3D printing concepts in a DreamBig digital learning session">
       <img src="images/dreambig-banner-4.jpg" alt="DreamBig volunteer explaining Arduino electronics to students">
@@ -309,6 +378,59 @@
       </div>
     </div>
     <div class="scroll-hint">scroll for more &rarr;</div>
+  </div>
+</section>
+
+<section id="in-the-news">
+  <div class="wrap">
+    <h2>DreamBig Education in the news and publications</h2>
+    <p class="lede">Local newspapers in Bhopal covered the story of DreamBig and its founder, Afia Suhail.</p>
+
+    <div class="news-scroll">
+      <div class="news-item">
+        <a class="clip" href="images/press-dainik-alok.jpg" target="_blank" rel="noopener">
+          <img src="images/press-dainik-alok.jpg" alt="Dainik Alok, Bhopal Metro City, 11 September 2026: DreamBig Education makes every student's dream come true">
+        </a>
+        <div class="news-paper">Dainik Alok</div>
+        <div class="news-meta">Bhopal Metro City &middot; Hindi</div>
+      </div>
+      <div class="news-item">
+        <a class="clip" href="images/press-db-star-bhaskar.jpg" target="_blank" rel="noopener">
+          <img src="images/press-db-star-bhaskar.jpg" alt="Dainik Bhaskar, DB Star Bhopal: DreamBig Education and Bhopal Serving Humanity reconnect out-of-school children with education">
+        </a>
+        <div class="news-paper">Dainik Bhaskar</div>
+        <div class="news-meta">DB Star Bhopal &middot; Hindi</div>
+      </div>
+      <div class="news-item">
+        <a class="clip" href="images/press-urdu-yalgaar-times.jpg" target="_blank" rel="noopener">
+          <img src="images/press-urdu-yalgaar-times.jpg" alt="Yalgaar Times (Urdu): DreamBig Education and Bhopal Serving Humanity widen support for students">
+        </a>
+        <div class="news-paper">Yalgaar Times</div>
+        <div class="news-meta">Urdu</div>
+      </div>
+      <div class="news-item">
+        <a class="clip" href="images/press-phir-nai-raah.jpg" target="_blank" rel="noopener">
+          <img src="images/press-phir-nai-raah.jpg" alt="Phir Nai Raah, 11 September 2026: DreamBig Education makes every student's dream come true">
+        </a>
+        <div class="news-paper">Phir Nai Raah</div>
+        <div class="news-meta">Regional news &middot; Hindi</div>
+      </div>
+      <div class="news-item">
+        <a class="clip" href="images/press-dastak.jpg" target="_blank" rel="noopener">
+          <img src="images/press-dastak.jpg" alt="Dastak, Bhopal: women hold a dialogue on self-reliance and employment opportunities at the DreamBig Education camp">
+        </a>
+        <div class="news-paper">Dastak</div>
+        <div class="news-meta">Bhopal &middot; Hindi</div>
+      </div>
+      <div class="news-item">
+        <a class="clip" href="images/press-akhand-doot.jpg" target="_blank" rel="noopener">
+          <img src="images/press-akhand-doot.jpg" alt="Akhand Doot, 12 September 2026: DreamBig Education makes every student's dream come true">
+        </a>
+        <div class="news-paper">Akhand Doot</div>
+        <div class="news-meta">Regional news &middot; Hindi</div>
+      </div>
+    </div>
+    <div class="scroll-hint">scroll for more &rarr;</div>
 
     <p class="closing" style="border-top:none;padding-top:0;">Humble beginnings, much work still to be done&hellip;</p>
   </div>
@@ -322,7 +444,6 @@
     </div>
     <div class="foot-row">
       <span>Made by Afia 2024</span>
-      <span>Last updated July 2026</span>
     </div>
   </div>
 </footer>
